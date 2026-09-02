@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Menu, Phone, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
+import logo2Hns from "@/assets/Logos/logo_s2hns.png";
 import { CONTACT, NAV_LINKS } from "./data";
-import { WhatsAppIcon } from "./WhatsAppIcon";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -24,15 +24,17 @@ export function Navbar() {
     >
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:py-4">
         <a href="#inicio" className="flex min-w-0 items-center gap-3">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md bg-machine-yellow font-display text-lg font-bold text-espresso-deep">
-            DH
-          </span>
+          <img
+            src={logo2Hns}
+            alt="Servicios Mineros Dos Hermanos"
+            className="h-10 w-auto shrink-0 object-contain drop-shadow"
+          />
           <span className="min-w-0 leading-none">
             <span className="block truncate font-display text-xl font-bold uppercase tracking-wide text-sand">
               Dos <span className="text-machine-yellow">Hermanos</span>
             </span>
             <span className="mt-1 block truncate text-[10px] uppercase tracking-[0.2em] text-sand/60">
-              Maquinaria pesada e industria
+              Servicios Mineros e Industria
             </span>
           </span>
         </a>
@@ -51,20 +53,17 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <a
-            href={CONTACT.phoneHref}
+            href={`mailto:${CONTACT.email}`}
             className="hidden items-center gap-2 rounded-full border border-amber-industrial/60 px-4 py-2 text-sm font-medium text-sand transition-colors hover:border-machine-yellow hover:text-machine-yellow sm:inline-flex"
           >
-            <Phone className="h-4 w-4 shrink-0 text-machine-yellow" />
-            {CONTACT.phone}
+            <Mail className="h-4 w-4 shrink-0 text-machine-yellow" />
+            {CONTACT.email}
           </a>
           <a
-            href={CONTACT.whatsappHref}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-md bg-whatsapp px-4 py-2 text-sm font-semibold text-espresso-deep shadow-industrial transition-transform hover:-translate-y-0.5"
+            href="#contacto"
+            className="inline-flex items-center gap-2 rounded-md bg-machine-yellow px-4 py-2 text-sm font-semibold text-espresso-deep shadow-industrial transition-transform hover:-translate-y-0.5"
           >
-            <WhatsAppIcon className="h-4 w-4 shrink-0" />
-            <span className="hidden sm:inline">WhatsApp</span>
+            Contacto
           </a>
           <button
             type="button"
@@ -90,11 +89,12 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href={CONTACT.phoneHref}
+            href={`mailto:${CONTACT.email}`}
+            onClick={() => setOpen(false)}
             className="mt-4 inline-flex items-center gap-2 rounded-full border border-amber-industrial/60 px-4 py-2 text-sm text-sand"
           >
-            <Phone className="h-4 w-4 text-machine-yellow" />
-            {CONTACT.phone}
+            <Mail className="h-4 w-4 text-machine-yellow" />
+            {CONTACT.email}
           </a>
         </nav>
       )}

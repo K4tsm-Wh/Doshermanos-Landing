@@ -1,6 +1,5 @@
 import { Check } from "lucide-react";
 import type { Service } from "./data";
-import { CONTACT } from "./data";
 
 export function ServiceSection({ service, reversed }: { service: Service; reversed: boolean }) {
   return (
@@ -43,12 +42,10 @@ export function ServiceSection({ service, reversed }: { service: Service; revers
           </div>
 
           <a
-            href={CONTACT.whatsappHref}
-            target="_blank"
-            rel="noreferrer"
+            href="#contacto"
             className="mt-8 inline-flex items-center gap-2 rounded-md bg-orange-industrial px-5 py-3 font-display text-sm font-semibold uppercase tracking-wider text-sand transition-transform hover:-translate-y-0.5"
           >
-            Solicitar cotización
+            Consultar por este servicio
           </a>
         </div>
 

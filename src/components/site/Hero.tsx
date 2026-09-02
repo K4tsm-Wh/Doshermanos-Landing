@@ -1,7 +1,6 @@
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import { CONTACT } from "./data";
-import { WhatsAppIcon } from "./WhatsAppIcon";
 
 export function Hero() {
   return (
@@ -33,36 +32,33 @@ export function Hero() {
 
         <div className="mt-9 flex flex-wrap items-center gap-3">
           <a
-            href={CONTACT.whatsappHref}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-md bg-whatsapp px-6 py-3 font-display text-base font-semibold uppercase tracking-wider text-espresso-deep shadow-industrial transition-transform hover:-translate-y-0.5"
+            href="#contacto"
+            className="inline-flex items-center gap-2 rounded-md bg-machine-yellow px-6 py-3 font-display text-base font-semibold uppercase tracking-wider text-espresso-deep shadow-industrial transition-transform hover:-translate-y-0.5"
           >
-            <WhatsAppIcon className="h-5 w-5" />
-            Cotizar por WhatsApp
+            Contactar Gerencia
+            <ArrowRight className="h-5 w-5" />
+          </a>
+          <a
+            href={`mailto:${CONTACT.email}`}
+            className="inline-flex items-center gap-2 rounded-md border border-amber-industrial bg-amber-industrial/15 px-6 py-3 font-display text-base font-semibold uppercase tracking-wider text-machine-yellow transition-colors hover:bg-amber-industrial/30"
+          >
+            <Mail className="h-5 w-5" />
+            {CONTACT.email}
           </a>
           <a
             href="#soldadura"
-            className="inline-flex items-center gap-2 rounded-md border border-amber-industrial bg-amber-industrial/15 px-6 py-3 font-display text-base font-semibold uppercase tracking-wider text-machine-yellow transition-colors hover:bg-amber-industrial/30"
-          >
-            Ver servicios
-            <ArrowRight className="h-4 w-4" />
-          </a>
-          <a
-            href={CONTACT.phoneHref}
             className="inline-flex items-center gap-2 rounded-md px-4 py-3 text-sm font-medium text-sand/80 transition-colors hover:text-machine-yellow"
           >
-            <Phone className="h-4 w-4 text-machine-yellow" />
-            {CONTACT.phone}
+            Conocer servicios
           </a>
         </div>
 
         <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-6 border-t border-sand/15 pt-8 sm:grid-cols-4">
           {[
-            ["+15", "Años en terreno"],
-            ["24/7", "Respuesta de emergencia"],
-            ["100%", "Trabajos con trazabilidad"],
-            ["5", "Divisiones técnicas"],
+            ["+15", "Años de trayectoria"],
+            ["100%", "Trazabilidad técnica"],
+            ["5", "Divisiones de servicio"],
+            ["Directa", "Atención de gerencia"],
           ].map(([value, label]) => (
             <div key={label}>
               <dt className="font-display text-3xl font-bold text-machine-yellow">{value}</dt>

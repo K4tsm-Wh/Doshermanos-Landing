@@ -5,14 +5,11 @@ import granallado from "@/assets/granallado.jpg";
 import fabricacion from "@/assets/fabricacion.jpg";
 
 export const CONTACT = {
-  phone: "+56 9 1234 5678",
-  phoneHref: "tel:+56912345678",
-  whatsappHref: "https://wa.me/56912345678",
-  email: "contacto@doshermanos.cl",
-  address: "Camino Industrial 1450, Parque Industrial, Chile",
-  mapsHref: "https://www.google.com/maps/search/?api=1&query=Parque+Industrial+Chile",
+  email: "gerencia@doshermanos.cl",
+  address: "Barrio Industrial, Coquimbo, Chile",
+  mapsHref: "https://maps.app.goo.gl/xpCfNxMUMNNVnXzV8",
   mapsEmbed:
-    "https://www.google.com/maps?q=-33.4489,-70.6693&z=13&output=embed",
+    "https://www.google.com/maps?q=-30.000025,-71.259798&z=15&output=embed",
 };
 
 export const NAV_LINKS = [
