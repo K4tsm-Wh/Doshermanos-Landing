@@ -1,5 +1,5 @@
 import { Mail, MapPin, ShieldCheck } from "lucide-react";
-import logo2Hns from "@/assets/Logos/logo_s2hns.png";
+import logoDosHermanos from "@/assets/Logos/LogoDosHermanos.png";
 import { CONTACT } from "./data";
 import { MapCard } from "./MapCard";
 
@@ -66,7 +66,7 @@ export function ContactFooter() {
 
         <div className="mt-14 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-t border-mocha pt-6">
           <div className="flex items-center gap-3">
-            <img src={logo2Hns} alt="Logo Dos Hermanos" className="h-8 w-auto object-contain opacity-80" />
+            <img src={logoDosHermanos} alt="Logo Dos Hermanos" className="h-8 w-auto object-contain opacity-90" />
             <p className="min-w-0 text-xs text-sand/50">
               © {new Date().getFullYear()} Dos Hermanos · Servicios Mineros e Industria.
             </p>

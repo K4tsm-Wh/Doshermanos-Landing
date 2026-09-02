@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Mail, Menu, X } from "lucide-react";
-import logo2Hns from "@/assets/Logos/logo_s2hns.png";
+import logoDosHermanos from "@/assets/Logos/LogoDosHermanos.png";
 import { CONTACT, NAV_LINKS } from "./data";
 
 export function Navbar() {
@@ -25,7 +25,7 @@ export function Navbar() {
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:py-4">
         <a href="#inicio" className="flex min-w-0 items-center gap-3">
           <img
-            src={logo2Hns}
+            src={logoDosHermanos}
             alt="Servicios Mineros Dos Hermanos"
             className="h-10 w-auto shrink-0 object-contain drop-shadow"
           />
