@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as MecanicaRouteImport } from './routes/mecanica'
 import { Route as SoldaduraRouteImport } from './routes/soldadura'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MecanicaRoute = MecanicaRouteImport.update({
+  id: '/mecanica',
+  path: '/mecanica',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SoldaduraRoute = SoldaduraRouteImport.update({
@@ -25,27 +31,31 @@ const SoldaduraRoute = SoldaduraRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/mecanica': typeof MecanicaRoute
   '/soldadura': typeof SoldaduraRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/mecanica': typeof MecanicaRoute
   '/soldadura': typeof SoldaduraRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/mecanica': typeof MecanicaRoute
   '/soldadura': typeof SoldaduraRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/soldadura'
+  fullPaths: '/' | '/mecanica' | '/soldadura'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/soldadura'
-  id: '__root__' | '/' | '/soldadura'
+  to: '/' | '/mecanica' | '/soldadura'
+  id: '__root__' | '/' | '/mecanica' | '/soldadura'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MecanicaRoute: typeof MecanicaRoute
   SoldaduraRoute: typeof SoldaduraRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mecanica': {
+      id: '/mecanica'
+      path: '/mecanica'
+      fullPath: '/mecanica'
+      preLoaderRoute: typeof MecanicaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/soldadura': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MecanicaRoute: MecanicaRoute,
   SoldaduraRoute: SoldaduraRoute,
 }
 export const routeTree = rootRouteImport

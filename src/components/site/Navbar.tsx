@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Mail, Menu, X } from "lucide-react";
 import logoDosHermanos from "@/assets/Logos/LogoDosHermanos.png";
 import { CONTACT, NAV_LINKS } from "./data";
@@ -23,7 +24,7 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:py-4">
-        <a href="#inicio" className="flex min-w-0 items-center gap-3">
+        <Link to="/" className="flex min-w-0 items-center gap-3">
           <img
             src={logoDosHermanos}
             alt="Servicios Mineros Dos Hermanos"
@@ -37,17 +38,19 @@ export function Navbar() {
               Servicios Mineros e Industria
             </span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-6 xl:flex">
           {NAV_LINKS.map((l) => (
-            <a
-              key={l.id}
-              href={`#${l.id}`}
+            <Link
+              key={l.to}
+              to={l.to}
+              activeOptions={{ exact: l.to === "/" }}
+              activeProps={{ className: "text-machine-yellow" }}
               className="font-display text-sm font-medium uppercase tracking-widest text-sand/75 transition-colors hover:text-machine-yellow"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -59,12 +62,13 @@ export function Navbar() {
             <Mail className="h-4 w-4 shrink-0 text-machine-yellow" />
             {CONTACT.email}
           </a>
-          <a
-            href="#contacto"
+          <Link
+            to="/"
+            hash="contacto"
             className="inline-flex items-center gap-2 rounded-md bg-machine-yellow px-4 py-2 text-sm font-semibold text-espresso-deep shadow-industrial transition-transform hover:-translate-y-0.5"
           >
             Contacto
-          </a>
+          </Link>
           <button
             type="button"
             aria-label="Abrir menú"
@@ -79,15 +83,25 @@ export function Navbar() {
       {open && (
         <nav className="border-t border-mocha/60 bg-espresso-deep px-4 pb-4 xl:hidden">
           {NAV_LINKS.map((l) => (
-            <a
-              key={l.id}
-              href={`#${l.id}`}
+            <Link
+              key={l.to}
+              to={l.to}
               onClick={() => setOpen(false)}
+              activeOptions={{ exact: l.to === "/" }}
+              activeProps={{ className: "text-machine-yellow" }}
               className="block border-b border-mocha/40 py-3 font-display text-sm uppercase tracking-widest text-sand/80 transition-colors hover:text-machine-yellow"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
+          <Link
+            to="/"
+            hash="contacto"
+            onClick={() => setOpen(false)}
+            className="mt-4 block border-b border-mocha/40 py-3 font-display text-sm uppercase tracking-widest text-sand/80 transition-colors hover:text-machine-yellow"
+          >
+            Contacto
+          </Link>
           <a
             href={`mailto:${CONTACT.email}`}
             onClick={() => setOpen(false)}
