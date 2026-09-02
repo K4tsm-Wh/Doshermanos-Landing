@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FabricacionYMantencionRouteImport } from './routes/fabricacion-y-mantencion'
+import { Route as GranalladoYPinturaRouteImport } from './routes/granallado-y-pintura'
+import { Route as MecanicaRouteImport } from './routes/mecanica'
+import { Route as MecanizadoRouteImport } from './routes/mecanizado'
+import { Route as SoldaduraRouteImport } from './routes/soldadura'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FabricacionYMantencionRoute = FabricacionYMantencionRouteImport.update({
+  id: '/fabricacion-y-mantencion',
+  path: '/fabricacion-y-mantencion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GranalladoYPinturaRoute = GranalladoYPinturaRouteImport.update({
+  id: '/granallado-y-pintura',
+  path: '/granallado-y-pintura',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MecanicaRoute = MecanicaRouteImport.update({
+  id: '/mecanica',
+  path: '/mecanica',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MecanizadoRoute = MecanizadoRouteImport.update({
+  id: '/mecanizado',
+  path: '/mecanizado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoldaduraRoute = SoldaduraRouteImport.update({
+  id: '/soldadura',
+  path: '/soldadura',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/fabricacion-y-mantencion': typeof FabricacionYMantencionRoute
+  '/granallado-y-pintura': typeof GranalladoYPinturaRoute
+  '/mecanica': typeof MecanicaRoute
+  '/mecanizado': typeof MecanizadoRoute
+  '/soldadura': typeof SoldaduraRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/fabricacion-y-mantencion': typeof FabricacionYMantencionRoute
+  '/granallado-y-pintura': typeof GranalladoYPinturaRoute
+  '/mecanica': typeof MecanicaRoute
+  '/mecanizado': typeof MecanizadoRoute
+  '/soldadura': typeof SoldaduraRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/fabricacion-y-mantencion': typeof FabricacionYMantencionRoute
+  '/granallado-y-pintura': typeof GranalladoYPinturaRoute
+  '/mecanica': typeof MecanicaRoute
+  '/mecanizado': typeof MecanizadoRoute
+  '/soldadura': typeof SoldaduraRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/fabricacion-y-mantencion'
+    | '/granallado-y-pintura'
+    | '/mecanica'
+    | '/mecanizado'
+    | '/soldadura'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/fabricacion-y-mantencion'
+    | '/granallado-y-pintura'
+    | '/mecanica'
+    | '/mecanizado'
+    | '/soldadura'
+  id:
+    | '__root__'
+    | '/'
+    | '/fabricacion-y-mantencion'
+    | '/granallado-y-pintura'
+    | '/mecanica'
+    | '/mecanizado'
+    | '/soldadura'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FabricacionYMantencionRoute: typeof FabricacionYMantencionRoute
+  GranalladoYPinturaRoute: typeof GranalladoYPinturaRoute
+  MecanicaRoute: typeof MecanicaRoute
+  MecanizadoRoute: typeof MecanizadoRoute
+  SoldaduraRoute: typeof SoldaduraRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fabricacion-y-mantencion': {
+      id: '/fabricacion-y-mantencion'
+      path: '/fabricacion-y-mantencion'
+      fullPath: '/fabricacion-y-mantencion'
+      preLoaderRoute: typeof FabricacionYMantencionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/granallado-y-pintura': {
+      id: '/granallado-y-pintura'
+      path: '/granallado-y-pintura'
+      fullPath: '/granallado-y-pintura'
+      preLoaderRoute: typeof GranalladoYPinturaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mecanica': {
+      id: '/mecanica'
+      path: '/mecanica'
+      fullPath: '/mecanica'
+      preLoaderRoute: typeof MecanicaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mecanizado': {
+      id: '/mecanizado'
+      path: '/mecanizado'
+      fullPath: '/mecanizado'
+      preLoaderRoute: typeof MecanizadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/soldadura': {
+      id: '/soldadura'
+      path: '/soldadura'
+      fullPath: '/soldadura'
+      preLoaderRoute: typeof SoldaduraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FabricacionYMantencionRoute: FabricacionYMantencionRoute,
+  GranalladoYPinturaRoute: GranalladoYPinturaRoute,
+  MecanicaRoute: MecanicaRoute,
+  MecanizadoRoute: MecanizadoRoute,
+  SoldaduraRoute: SoldaduraRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
