@@ -10,6 +10,7 @@ const RATIO: Record<GalleryItem["ratio"], string> = {
 
 export function ServiceGallery({ items, title }: { items: GalleryItem[]; title: string }) {
   const [active, setActive] = useState<number | null>(null);
+  const activeItem = active === null ? null : (items[active] ?? null);
 
   useEffect(() => {
     if (active === null) return;
@@ -55,11 +56,11 @@ export function ServiceGallery({ items, title }: { items: GalleryItem[]; title: 
         </div>
       </div>
 
-      {active !== null && (
+      {activeItem && (
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={items[active].alt}
+          aria-label={activeItem.alt}
           onClick={() => setActive(null)}
           className="fixed inset-0 z-[60] grid place-items-center bg-espresso-deep/90 p-4 backdrop-blur-sm"
         >
@@ -73,12 +74,12 @@ export function ServiceGallery({ items, title }: { items: GalleryItem[]; title: 
           </button>
           <figure className="max-h-full w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
             <img
-              src={items[active].src}
-              alt={items[active].alt}
+              src={activeItem.src}
+              alt={activeItem.alt}
               className="max-h-[75vh] w-full rounded-md border border-mocha object-contain"
             />
             <figcaption className="mt-3 text-center text-xs uppercase tracking-widest text-sand/70">
-              {items[active].alt}
+              {activeItem.alt}
             </figcaption>
           </figure>
         </div>

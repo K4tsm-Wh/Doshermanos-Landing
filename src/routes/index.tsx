@@ -4,6 +4,7 @@ import { Hero } from "@/components/site/Hero";
 import { TrustBar } from "@/components/site/TrustBar";
 import { ServiceSection } from "@/components/site/ServiceSection";
 import { ContactFooter } from "@/components/site/ContactFooter";
+import { FloatingWhatsApp } from "@/components/site/FloatingWhatsApp";
 import { SERVICES } from "@/components/site/data";
 
 const TITLE = "Dos Hermanos | Maquinaria Pesada, Maestranza y Mantención Industrial";
@@ -46,11 +47,14 @@ function Index() {
       <main>
         <Hero />
         <TrustBar />
-        {SERVICES.map((service, i) => (
-          <ServiceSection key={service.id} service={service} reversed={i % 2 === 1} />
-        ))}
+        <div id="servicios">
+          {SERVICES.map((service, i) => (
+            <ServiceSection key={service.id} service={service} reversed={i % 2 === 1} />
+          ))}
+        </div>
       </main>
       <ContactFooter />
+      <FloatingWhatsApp />
     </div>
   );
 }
