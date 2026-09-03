@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServiceDetailLayout } from "@/components/site/ServiceDetailLayout";
-import { SERVICES } from "@/components/site/data";
+import { getService } from "@/components/site/data";
 
-const service = SERVICES[4];
+const service = getService("fabricacion");
 
 export const Route = createFileRoute("/fabricacion-y-mantencion")({
   head: () => ({

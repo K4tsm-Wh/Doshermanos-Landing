@@ -280,3 +280,9 @@ export const SERVICES: Service[] = [
     },
   },
 ];
+
+export function getService(id: string): Service {
+  const found = SERVICES.find((s) => s.id === id);
+  if (!found) throw new Error(`Servicio no encontrado: ${id}`);
+  return found;
+}
