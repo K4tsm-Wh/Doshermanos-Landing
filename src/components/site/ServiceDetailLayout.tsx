@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { ChevronRight, Check, Mail } from "lucide-react";
 import { Navbar } from "./Navbar";
 import { ContactFooter } from "./ContactFooter";
-import { FloatingWhatsApp } from "./FloatingWhatsApp";
 import { ServiceGallery } from "./ServiceGallery";
 import { CONTACT, type Service } from "./data";
 
@@ -102,34 +101,33 @@ export function ServiceDetailLayout({ service }: { service: Service }) {
           <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 py-14 sm:px-6 lg:grid-cols-[minmax(0,1fr)_auto]">
             <div className="min-w-0">
               <h2 className="font-display text-2xl font-bold leading-tight text-sand sm:text-3xl">
-                ¿Tienes un requerimiento de {service.title}? Cotiza con nosotros
+                ¿Necesitas soporte técnico en {service.title}? Contacta a nuestra Gerencia
               </h2>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-sand/75">
-                Escríbenos con el detalle de tu equipo o componente y te respondemos con una propuesta
-                técnica y plazos de ejecución.
+                Escríbenos directamente para evaluar tu requerimiento, coordinar visitas técnicas en faena
+                o solicitar la presentación corporativa de nuestros servicios.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
               <a
-                href={`mailto:${CONTACT.email}?subject=${encodeURIComponent(`Cotización ${service.title}`)}`}
+                href={`mailto:${CONTACT.email}?subject=${encodeURIComponent(`Consulta Técnica - ${service.title}`)}`}
                 className="inline-flex items-center gap-2 rounded-md bg-machine-yellow px-6 py-3 font-display text-sm font-semibold uppercase tracking-wider text-espresso-deep transition-transform hover:-translate-y-0.5"
               >
                 <Mail className="h-4 w-4" />
-                Cotizar por Email
+                Escribir a Gerencia
               </a>
               <Link
                 to="/"
                 hash="contacto"
                 className="inline-flex items-center gap-2 rounded-md border border-machine-yellow/60 px-6 py-3 font-display text-sm font-semibold uppercase tracking-wider text-machine-yellow transition-colors hover:bg-machine-yellow/10"
               >
-                Ver contacto
+                Contacto Corporativo
               </Link>
             </div>
           </div>
         </section>
       </main>
       <ContactFooter />
-      <FloatingWhatsApp />
     </div>
   );
 }
