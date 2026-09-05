@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { ChevronRight, Check, Mail } from "lucide-react";
+import { ChevronRight, Check } from "lucide-react";
 import { Navbar } from "./Navbar";
 import { ContactFooter } from "./ContactFooter";
 import { ServiceGallery } from "./ServiceGallery";
-import { CONTACT, type Service } from "./data";
+import type { Service } from "./data";
 
 export function ServiceDetailLayout({ service }: { service: Service }) {
   return (
@@ -66,66 +66,6 @@ export function ServiceDetailLayout({ service }: { service: Service }) {
         </section>
 
         <ServiceGallery items={service.gallery} title={service.title} />
-
-        <section className="bg-background">
-          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
-            <span className="eyebrow text-xs text-amber-industrial">Detalle Técnico</span>
-            <h2 className="mt-3 font-display text-3xl font-bold text-espresso sm:text-4xl">
-              Alcance, equipamiento y control de calidad
-            </h2>
-
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {service.highlights.map((block) => (
-                <div
-                  key={block.title}
-                  className="rounded-md border border-border bg-warm-gray/60 p-6 transition-shadow hover:shadow-industrial"
-                >
-                  <h3 className="font-display text-lg font-bold uppercase tracking-wide text-espresso">
-                    {block.title}
-                  </h3>
-                  <ul className="mt-4 space-y-2.5">
-                    {block.items.map((item) => (
-                      <li key={item} className="flex min-w-0 items-start gap-2.5">
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-industrial" />
-                        <span className="min-w-0 text-sm leading-relaxed text-steel-brown">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="border-y border-mocha bg-steel-brown/95">
-          <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 py-14 sm:px-6 lg:grid-cols-[minmax(0,1fr)_auto]">
-            <div className="min-w-0">
-              <h2 className="font-display text-2xl font-bold leading-tight text-sand sm:text-3xl">
-                ¿Necesitas soporte técnico en {service.title}? Contacta a nuestra Gerencia
-              </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-sand/75">
-                Escríbenos directamente para evaluar tu requerimiento, coordinar visitas técnicas en faena
-                o solicitar la presentación corporativa de nuestros servicios.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={`mailto:${CONTACT.email}?subject=${encodeURIComponent(`Consulta Técnica - ${service.title}`)}`}
-                className="inline-flex items-center gap-2 rounded-md bg-machine-yellow px-6 py-3 font-display text-sm font-semibold uppercase tracking-wider text-espresso-deep transition-transform hover:-translate-y-0.5"
-              >
-                <Mail className="h-4 w-4" />
-                Escribir a Gerencia
-              </a>
-              <Link
-                to="/"
-                hash="contacto"
-                className="inline-flex items-center gap-2 rounded-md border border-machine-yellow/60 px-6 py-3 font-display text-sm font-semibold uppercase tracking-wider text-machine-yellow transition-colors hover:bg-machine-yellow/10"
-              >
-                Contacto Corporativo
-              </Link>
-            </div>
-          </div>
-        </section>
       </main>
       <ContactFooter />
     </div>
