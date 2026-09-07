@@ -43,7 +43,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <TrustBar />
         <div id="servicios">

@@ -9,26 +9,40 @@ export function ServiceDetailLayout({ service }: { service: Service }) {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main>
+      <main id="main-content">
         <section className="relative isolate overflow-hidden bg-espresso-deep">
           <img
             src={service.image}
-            alt={`Servicio de ${service.title}`}
+            alt={`Servicio de ${service.title} en maestranza`}
+            fetchPriority="high"
+            decoding="async"
+            width={1200}
+            height={800}
             className="absolute inset-0 h-full w-full object-cover opacity-35"
           />
           <div className="hero-overlay absolute inset-0" />
 
           <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:pb-24 lg:pt-40">
-            <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1 text-xs text-sand/60">
-              <Link to="/" className="transition-colors hover:text-machine-yellow">
+            <nav
+              aria-label="Breadcrumb"
+              className="flex flex-wrap items-center gap-1.5 text-xs text-sand/75"
+            >
+              <Link
+                to="/"
+                className="transition-colors hover:text-machine-yellow focus-visible:ring-2 focus-visible:ring-machine-yellow"
+              >
                 Inicio
               </Link>
-              <ChevronRight className="h-3 w-3 shrink-0" />
-              <Link to="/" hash="servicios" className="transition-colors hover:text-machine-yellow">
+              <ChevronRight className="h-3 w-3 shrink-0 text-sand/50" />
+              <Link
+                to="/"
+                hash="servicios"
+                className="transition-colors hover:text-machine-yellow focus-visible:ring-2 focus-visible:ring-machine-yellow"
+              >
                 Servicios
               </Link>
-              <ChevronRight className="h-3 w-3 shrink-0" />
-              <span className="text-machine-yellow">{service.title}</span>
+              <ChevronRight className="h-3 w-3 shrink-0 text-sand/50" />
+              <span className="font-medium text-machine-yellow">{service.title}</span>
             </nav>
 
             <span className="eyebrow mt-6 inline-flex rounded-md border border-machine-yellow/40 bg-machine-yellow/10 px-3 py-1 text-xs text-machine-yellow">
@@ -39,7 +53,9 @@ export function ServiceDetailLayout({ service }: { service: Service }) {
               {service.title}
             </h1>
 
-            <p className="mt-6 max-w-3xl text-base leading-relaxed text-sand/80">{service.overview}</p>
+            <p className="mt-6 max-w-3xl text-base leading-relaxed text-sand/80">
+              {service.overview}
+            </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               {service.tags.map((tag) => (

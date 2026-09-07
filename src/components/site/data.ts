@@ -9,8 +9,7 @@ export const CONTACT = {
   email: "gerencia@doshermanos.cl",
   address: "Barrio Industrial, Coquimbo, Chile",
   mapsHref: "https://maps.app.goo.gl/xpCfNxMUMNNVnXzV8",
-  mapsEmbed:
-    "https://www.google.com/maps?q=-30.000025,-71.259798&z=15&output=embed",
+  mapsEmbed: "https://www.google.com/maps?q=-30.000025,-71.259798&z=15&output=embed",
 };
 
 export const SERVICE_PATHS = {
@@ -52,7 +51,6 @@ export type Service = {
   meta: { title: string; description: string };
 };
 
-
 export const SERVICES: Service[] = [
   {
     id: "soldadura",
@@ -77,20 +75,39 @@ export const SERVICES: Service[] = [
       { src: fabricacion, alt: "Componente soldado terminado", ratio: "square" },
       { src: mecanica, alt: "Recuperación estructural de bastidor", ratio: "square" },
       { src: mecanizado, alt: "Preparación de junta previa a soldadura", ratio: "video" },
-      { src: granallado, alt: "Estructura soldada lista para protección superficial", ratio: "portrait" },
+      {
+        src: granallado,
+        alt: "Estructura soldada lista para protección superficial",
+        ratio: "portrait",
+      },
     ],
     highlights: [
       {
         title: "Aplicaciones",
-        items: ["Chasis y bastidores", "Tolvas y baldes", "Estructuras y calderería", "Reparación de fisuras"],
+        items: [
+          "Chasis y bastidores",
+          "Tolvas y baldes",
+          "Estructuras y calderería",
+          "Reparación de fisuras",
+        ],
       },
       {
         title: "Equipamiento",
-        items: ["Equipos MIG/MAG y TIG", "Arco sumergido", "Plantas móviles en faena", "Precalentamiento controlado"],
+        items: [
+          "Equipos MIG/MAG y TIG",
+          "Arco sumergido",
+          "Plantas móviles en faena",
+          "Precalentamiento controlado",
+        ],
       },
       {
         title: "Aseguramiento de calidad",
-        items: ["WPS / PQR vigentes", "Inspección visual certificada", "Ensayos no destructivos", "Informe técnico por trabajo"],
+        items: [
+          "WPS / PQR vigentes",
+          "Inspección visual certificada",
+          "Ensayos no destructivos",
+          "Informe técnico por trabajo",
+        ],
       },
     ],
     meta: {
@@ -127,15 +144,30 @@ export const SERVICES: Service[] = [
     highlights: [
       {
         title: "Aplicaciones",
-        items: ["Transmisiones y mandos finales", "Motores diésel", "Cilindros hidráulicos", "Sistemas de frenos"],
+        items: [
+          "Transmisiones y mandos finales",
+          "Motores diésel",
+          "Cilindros hidráulicos",
+          "Sistemas de frenos",
+        ],
       },
       {
         title: "Equipamiento",
-        items: ["Bancos de prueba hidráulica", "Herramienta de torque calibrada", "Camiones de servicio", "Instrumentos de diagnóstico"],
+        items: [
+          "Bancos de prueba hidráulica",
+          "Herramienta de torque calibrada",
+          "Camiones de servicio",
+          "Instrumentos de diagnóstico",
+        ],
       },
       {
         title: "Aseguramiento de calidad",
-        items: ["Medición de holguras", "Torques según fabricante", "Pruebas funcionales", "Registro de repuestos"],
+        items: [
+          "Medición de holguras",
+          "Torques según fabricante",
+          "Pruebas funcionales",
+          "Registro de repuestos",
+        ],
       },
     ],
     meta: {
@@ -172,15 +204,30 @@ export const SERVICES: Service[] = [
     highlights: [
       {
         title: "Aplicaciones",
-        items: ["Pines y bujes", "Ejes y camisas", "Alojamientos y bancadas", "Rectificado de superficies"],
+        items: [
+          "Pines y bujes",
+          "Ejes y camisas",
+          "Alojamientos y bancadas",
+          "Rectificado de superficies",
+        ],
       },
       {
         title: "Equipamiento",
-        items: ["Torno CNC y convencional", "Fresadora universal", "Mandrinadora portátil", "Instrumentos de metrología"],
+        items: [
+          "Torno CNC y convencional",
+          "Fresadora universal",
+          "Mandrinadora portátil",
+          "Instrumentos de metrología",
+        ],
       },
       {
         title: "Aseguramiento de calidad",
-        items: ["Verificación dimensional", "Control de rugosidad", "Planos de fabricación", "Protocolo de entrega"],
+        items: [
+          "Verificación dimensional",
+          "Control de rugosidad",
+          "Planos de fabricación",
+          "Protocolo de entrega",
+        ],
       },
     ],
     meta: {
@@ -217,15 +264,30 @@ export const SERVICES: Service[] = [
     highlights: [
       {
         title: "Aplicaciones",
-        items: ["Estructuras y estanques", "Chasis y tolvas", "Piezas y componentes", "Repintado de flota"],
+        items: [
+          "Estructuras y estanques",
+          "Chasis y tolvas",
+          "Piezas y componentes",
+          "Repintado de flota",
+        ],
       },
       {
         title: "Equipamiento",
-        items: ["Cabina de granallado", "Equipos airless", "Compresores industriales", "Control de humedad y temperatura"],
+        items: [
+          "Cabina de granallado",
+          "Equipos airless",
+          "Compresores industriales",
+          "Control de humedad y temperatura",
+        ],
       },
       {
         title: "Aseguramiento de calidad",
-        items: ["Perfil de anclaje medido", "Espesor de película seca", "Pruebas de adherencia", "Registro fotográfico"],
+        items: [
+          "Perfil de anclaje medido",
+          "Espesor de película seca",
+          "Pruebas de adherencia",
+          "Registro fotográfico",
+        ],
       },
     ],
     meta: {
@@ -262,15 +324,30 @@ export const SERVICES: Service[] = [
     highlights: [
       {
         title: "Aplicaciones",
-        items: ["Repuestos descontinuados", "Piezas de desgaste", "Componentes estructurales", "Kits de mantención"],
+        items: [
+          "Repuestos descontinuados",
+          "Piezas de desgaste",
+          "Componentes estructurales",
+          "Kits de mantención",
+        ],
       },
       {
         title: "Equipamiento",
-        items: ["Levantamiento dimensional", "Corte y plegado", "Mecanizado y soldadura", "Ensamble en maestranza"],
+        items: [
+          "Levantamiento dimensional",
+          "Corte y plegado",
+          "Mecanizado y soldadura",
+          "Ensamble en maestranza",
+        ],
       },
       {
         title: "Aseguramiento de calidad",
-        items: ["Planos aprobados", "Control de materiales", "Verificación de ajuste", "Garantía de fabricación"],
+        items: [
+          "Planos aprobados",
+          "Control de materiales",
+          "Verificación de ajuste",
+          "Garantía de fabricación",
+        ],
       },
     ],
     meta: {

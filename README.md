@@ -20,7 +20,7 @@ Warm Mocha / Steel Brown: (#574238 / #3E3029) for structured borders, subtle car
 Contrast & Hierarchy: High contrast readability with sharp industrial typography, modern rounded-md cards, subtle drop shadows, and clean grid alignment.
 
 1. Navigation / Header (Sticky)
-Background: Clean semi-translucent dark espresso or solid warm white with a thin border (border-stone-200 / border-stone-800).
+   Background: Clean semi-translucent dark espresso or solid warm white with a thin border (border-stone-200 / border-stone-800).
 
 Logo/Brand: "Dos Hermanos" with solid industrial typography (combining warm brown and yellow/orange accents).
 
@@ -47,12 +47,12 @@ Direct Phone/Contact pill button (warm brown / amber border).
 Prominent WhatsApp CTA button (#25D366 accent).
 
 2. Hero & Trust / Value Proposition Section
-Hero Banner: Impactful heavy-industry hero section with a bold headline, rich dark background with subtle warm tones, and punchy value proposition focusing on precision, heavy machinery uptime, and execution standards.
+   Hero Banner: Impactful heavy-industry hero section with a bold headline, rich dark background with subtle warm tones, and punchy value proposition focusing on precision, heavy machinery uptime, and execution standards.
 
 Trust / Metrics Strip: A dedicated trust bar below the hero using warm sand/light coffee background (#F5F0EB) with key badges (e.g., "Normas de Calidad & Seguridad", "Trazabilidad Garantizada", "Capacidad Operativa en Terreno", "Respuesta Rápida").
 
 3. Core Services Sections (Alternating Layouts)
-Create distinct, modern section blocks (alternating between clean white and soft warm gray cards with industrial image placeholders, tag chips, and bulleted technical specs) for the following 5 divisions:
+   Create distinct, modern section blocks (alternating between clean white and soft warm gray cards with industrial image placeholders, tag chips, and bulleted technical specs) for the following 5 divisions:
 
 Soldadura:
 
@@ -95,7 +95,7 @@ Description: Reconstrucción, diseño y fabricación a medida de repuestos y pie
 Feature tags: Fabricación a Medida, Reingeniería de Componentes, Mantención Preventiva.
 
 4. Contact & Location Footer Section
-Deep dark coffee/espresso theme (#1F1815).
+   Deep dark coffee/espresso theme (#1F1815).
 
 Headline: "Hablemos de tu próximo proyecto" with clear turnaround commitment text.
 
