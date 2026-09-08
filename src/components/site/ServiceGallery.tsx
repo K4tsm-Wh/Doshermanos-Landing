@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { X, ZoomIn } from "lucide-react";
 import type { GalleryItem } from "./data";
 
-const RATIO: Record<GalleryItem["ratio"], string> = {
+const RATIO: Record<NonNullable<GalleryItem["ratio"]>, string> = {
   video: "aspect-video",
   portrait: "aspect-[3/4]",
   square: "aspect-[4/3]",
@@ -37,30 +37,32 @@ export function ServiceGallery({ items, title }: { items: GalleryItem[]; title: 
           Trabajos de {title} en terreno y maestranza
         </h2>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
             <button
               key={`${item.src}-${i}`}
               type="button"
               onClick={() => setActive(i)}
               aria-label={`Ampliar imagen: ${item.alt}`}
-              className="group relative overflow-hidden rounded-md border border-border bg-background shadow-industrial focus-visible:ring-2 focus-visible:ring-machine-yellow"
+              className="group relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-border bg-espresso-deep/10 shadow-industrial transition-all duration-300 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-machine-yellow cursor-pointer"
             >
-              <div className={`w-full overflow-hidden ${RATIO[item.ratio]}`}>
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  decoding="async"
-                  width={640}
-                  height={480}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <span className="absolute inset-0 bg-espresso-deep/0 transition-colors duration-300 group-hover:bg-espresso-deep/45" />
-              <span className="absolute inset-x-0 bottom-0 flex min-w-0 items-center gap-2 p-3 text-left opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <ZoomIn className="h-4 w-4 shrink-0 text-machine-yellow" />
-                <span className="min-w-0 truncate text-xs font-medium text-sand">{item.alt}</span>
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                decoding="async"
+                width={800}
+                height={600}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-espresso-deep/90 via-espresso-deep/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <span className="pointer-events-none absolute inset-x-0 bottom-0 flex min-w-0 items-center gap-2.5 p-4 text-left opacity-0 transition-all duration-300 translate-y-1 group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-md bg-machine-yellow text-espresso-deep shadow-sm">
+                  <ZoomIn className="h-4 w-4" />
+                </span>
+                <span className="min-w-0 text-xs font-semibold text-sand line-clamp-2 drop-shadow-sm">
+                  {item.alt}
+                </span>
               </span>
             </button>
           ))}
