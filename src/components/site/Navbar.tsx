@@ -73,7 +73,7 @@ export function Navbar() {
             hash="contacto"
             className="inline-flex items-center gap-2 rounded-md bg-machine-yellow px-4 py-2 font-display text-sm font-semibold uppercase tracking-wider text-espresso-deep shadow-industrial transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-machine-yellow"
           >
-            Cotizar
+            Contactar
           </Link>
           <button
             type="button"
@@ -112,7 +112,7 @@ export function Navbar() {
             onClick={() => setOpen(false)}
             className="mt-4 block rounded-md bg-machine-yellow px-4 py-2.5 text-center font-display text-sm font-semibold uppercase tracking-wider text-espresso-deep shadow-industrial"
           >
-            Solicitar Cotización
+            Contactar
           </Link>
           <a
             href={`mailto:${CONTACT.email}`}

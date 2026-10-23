@@ -198,7 +198,7 @@ export const SERVICES: Service[] = [
     category: "Precisión Industrial",
     title: "Mecanizado",
     description:
-      "Tornería, fresado y mecanizado CNC/convencional para tolerancias y ajustes de fábrica para componentes CAT.",
+      "Tornería, fresado y torno de barras (barrenado de alojamientos) para tolerancias y ajustes de fábrica para componentes.",
     overview:
       "Fabricamos y rectificamos componentes con tolerancias exigentes mediante torno, fresa y mecanizado CNC, además de mecanizado in situ para alojamientos que no pueden desmontarse. Cada pieza se verifica dimensionalmente antes de la entrega, asegurando ajustes correctos en pines, bujes, ejes y bancadas de equipos mineros e industriales.",
     tags: ["Torno & Fresa", "Mecanizado In Situ", "Ajuste de Tolerancias"],
@@ -258,7 +258,7 @@ export const SERVICES: Service[] = [
     category: "Protección Superficial",
     title: "Granallado y Pintura",
     description:
-      "Preparación y pintura de partes y piezas de componentes CAT.",
+      "Preparación y pintura de partes y piezas de componentes.",
     overview:
       "Aplicamos esquemas de protección anticorrosiva completos: preparación de superficie por granallado según SSPC-SP6/SP10, imprimación y capas epóxicas o de poliuretano de alto espesor. Controlamos perfil de anclaje, espesor de película seca y adherencia, extendiendo la vida útil de estructuras y componentes expuestos a ambiente minero y costero.",
     tags: ["Granallado", "Pintura Industrial", "Recubrimientos Anticorrosivos"],
@@ -266,6 +266,7 @@ export const SERVICES: Service[] = [
       "Limpieza de componentes CAT mediante granallado industrial",
       "Preparación de recubrimiento anticorrosivo de alta adherencia garantizando la protección de la estructura contra la oxidación y agentes ambientales",
       "Recubrimiento con pintura CAT de alta resistencia para protección contra la corrosión y desgaste",
+      "Pinturas corporativa de componentes",
     ],
     image: granallado,
     gallery: [

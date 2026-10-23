@@ -5,7 +5,7 @@ import * as z from "zod";
 import { toast } from "sonner";
 import { CheckCircle2, ChevronDown, Loader2, Send, ShieldCheck, Sparkles } from "lucide-react";
 
-const quoteSchema = z.object({
+const contactSchema = z.object({
   empresa: z
     .string()
     .trim()
@@ -22,7 +22,7 @@ const quoteSchema = z.object({
     .min(10, "Describe brevemente el requerimiento o componente a intervenir (mín. 10 caracteres)"),
 });
 
-type QuoteFormData = z.infer<typeof quoteSchema>;
+type ContactFormData = z.infer<typeof contactSchema>;
 
 const SERVICE_OPTIONS = [
   { value: "soldadura", label: "01 — Soldadura Estructural & Calderería" },
@@ -33,7 +33,7 @@ const SERVICE_OPTIONS = [
   { value: "terreno", label: "06 — Diagnóstico & Asistencia Técnica en Faena" },
 ];
 
-export function QuoteForm() {
+export function ContactForm() {
   const [submittedData, setSubmittedData] = useState<{
     folio: string;
     empresa: string;
@@ -45,8 +45,8 @@ export function QuoteForm() {
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<QuoteFormData>({
-    resolver: zodResolver(quoteSchema),
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
     defaultValues: {
       empresa: "",
       nombre: "",
@@ -57,7 +57,7 @@ export function QuoteForm() {
     },
   });
 
-  const onSubmit = async (data: QuoteFormData) => {
+  const onSubmit = async (data: ContactFormData) => {
     // Simulación de envío seguro client-side con delay asíncrono
     await new Promise((resolve) => setTimeout(resolve, 900));
 
@@ -74,8 +74,8 @@ export function QuoteForm() {
       servicio: selectedLabel,
     });
 
-    toast.success("Solicitud de cotización enviada con éxito", {
-      description: `Folio ${folio}. El equipo técnico de gerencia revisará tu requerimiento a la brevedad.`,
+    toast.success("Mensaje enviado con éxito", {
+      description: `Folio ${folio}. El equipo técnico de gerencia revisará tu consulta a la brevedad.`,
     });
   };
 
@@ -94,7 +94,7 @@ export function QuoteForm() {
               Solicitud Ingresada
             </span>
             <h3 className="font-display text-2xl font-bold text-sand sm:text-3xl">
-              Cotización en Proceso de Evaluación
+              Consulta en Proceso de Atención
             </h3>
           </div>
         </div>
@@ -150,7 +150,7 @@ export function QuoteForm() {
       <div className="border-b border-mocha/70 pb-4">
         <span className="eyebrow text-xs text-machine-yellow">Atención Directa B2B</span>
         <h3 className="mt-1 font-display text-2xl font-bold text-sand sm:text-3xl">
-          Solicitar Cotización u Orden de Trabajo
+          Contacto & Asistencia Técnica
         </h3>
         <p className="mt-1.5 text-xs leading-relaxed text-sand/70 sm:text-sm">
           Completa los datos de tu empresa y el servicio requerido. Responderemos con propuesta
@@ -162,23 +162,23 @@ export function QuoteForm() {
         {/* Empresa */}
         <div>
           <label
-            htmlFor="quote-empresa"
+            htmlFor="contact-empresa"
             className="block text-xs font-medium uppercase tracking-wider text-sand/80"
           >
             Empresa / Razón Social <span className="text-machine-yellow">*</span>
           </label>
           <input
-            id="quote-empresa"
+            id="contact-empresa"
             type="text"
             disabled={isSubmitting}
             placeholder="Ej: Minera San Pedro SpA"
             {...register("empresa")}
             className="mt-1.5 w-full rounded-md border border-mocha bg-espresso-deep/90 px-3.5 py-2.5 text-sm text-sand placeholder:text-sand/35 focus:border-machine-yellow focus:outline-none focus:ring-1 focus:ring-machine-yellow disabled:opacity-60"
             aria-invalid={!!errors.empresa}
-            aria-describedby={errors.empresa ? "quote-empresa-error" : undefined}
+            aria-describedby={errors.empresa ? "contact-empresa-error" : undefined}
           />
           {errors.empresa && (
-            <p id="quote-empresa-error" className="mt-1 text-xs text-amber-300">
+            <p id="contact-empresa-error" className="mt-1 text-xs text-amber-300">
               {errors.empresa.message}
             </p>
           )}
@@ -187,23 +187,23 @@ export function QuoteForm() {
         {/* Nombre de contacto */}
         <div>
           <label
-            htmlFor="quote-nombre"
+            htmlFor="contact-nombre"
             className="block text-xs font-medium uppercase tracking-wider text-sand/80"
           >
             Nombre del Contacto <span className="text-machine-yellow">*</span>
           </label>
           <input
-            id="quote-nombre"
+            id="contact-nombre"
             type="text"
             disabled={isSubmitting}
             placeholder="Ej: Rodrigo Valenzuela"
             {...register("nombre")}
             className="mt-1.5 w-full rounded-md border border-mocha bg-espresso-deep/90 px-3.5 py-2.5 text-sm text-sand placeholder:text-sand/35 focus:border-machine-yellow focus:outline-none focus:ring-1 focus:ring-machine-yellow disabled:opacity-60"
             aria-invalid={!!errors.nombre}
-            aria-describedby={errors.nombre ? "quote-nombre-error" : undefined}
+            aria-describedby={errors.nombre ? "contact-nombre-error" : undefined}
           />
           {errors.nombre && (
-            <p id="quote-nombre-error" className="mt-1 text-xs text-amber-300">
+            <p id="contact-nombre-error" className="mt-1 text-xs text-amber-300">
               {errors.nombre.message}
             </p>
           )}
@@ -212,23 +212,23 @@ export function QuoteForm() {
         {/* Correo corporativo */}
         <div>
           <label
-            htmlFor="quote-email"
+            htmlFor="contact-email"
             className="block text-xs font-medium uppercase tracking-wider text-sand/80"
           >
             Email Corporativo <span className="text-machine-yellow">*</span>
           </label>
           <input
-            id="quote-email"
+            id="contact-email"
             type="email"
             disabled={isSubmitting}
             placeholder="rvalenzuela@empresa.cl"
             {...register("email")}
             className="mt-1.5 w-full rounded-md border border-mocha bg-espresso-deep/90 px-3.5 py-2.5 text-sm text-sand placeholder:text-sand/35 focus:border-machine-yellow focus:outline-none focus:ring-1 focus:ring-machine-yellow disabled:opacity-60"
             aria-invalid={!!errors.email}
-            aria-describedby={errors.email ? "quote-email-error" : undefined}
+            aria-describedby={errors.email ? "contact-email-error" : undefined}
           />
           {errors.email && (
-            <p id="quote-email-error" className="mt-1 text-xs text-amber-300">
+            <p id="contact-email-error" className="mt-1 text-xs text-amber-300">
               {errors.email.message}
             </p>
           )}
@@ -237,23 +237,23 @@ export function QuoteForm() {
         {/* Teléfono */}
         <div>
           <label
-            htmlFor="quote-telefono"
+            htmlFor="contact-telefono"
             className="block text-xs font-medium uppercase tracking-wider text-sand/80"
           >
             Teléfono de Contacto <span className="text-machine-yellow">*</span>
           </label>
           <input
-            id="quote-telefono"
+            id="contact-telefono"
             type="tel"
             disabled={isSubmitting}
             placeholder="+56 9 1234 5678"
             {...register("telefono")}
             className="mt-1.5 w-full rounded-md border border-mocha bg-espresso-deep/90 px-3.5 py-2.5 text-sm text-sand placeholder:text-sand/35 focus:border-machine-yellow focus:outline-none focus:ring-1 focus:ring-machine-yellow disabled:opacity-60"
             aria-invalid={!!errors.telefono}
-            aria-describedby={errors.telefono ? "quote-telefono-error" : undefined}
+            aria-describedby={errors.telefono ? "contact-telefono-error" : undefined}
           />
           {errors.telefono && (
-            <p id="quote-telefono-error" className="mt-1 text-xs text-amber-300">
+            <p id="contact-telefono-error" className="mt-1 text-xs text-amber-300">
               {errors.telefono.message}
             </p>
           )}
@@ -262,19 +262,19 @@ export function QuoteForm() {
         {/* Selección de división */}
         <div className="sm:col-span-2">
           <label
-            htmlFor="quote-servicio"
+            htmlFor="contact-servicio"
             className="block text-xs font-medium uppercase tracking-wider text-sand/80"
           >
             División / Servicio Requerido <span className="text-machine-yellow">*</span>
           </label>
           <div className="relative mt-1.5">
             <select
-              id="quote-servicio"
+              id="contact-servicio"
               disabled={isSubmitting}
               {...register("servicio")}
               className="w-full appearance-none rounded-md border border-mocha bg-espresso-deep/90 px-3.5 py-2.5 text-sm text-sand focus:border-machine-yellow focus:outline-none focus:ring-1 focus:ring-machine-yellow disabled:opacity-60"
               aria-invalid={!!errors.servicio}
-              aria-describedby={errors.servicio ? "quote-servicio-error" : undefined}
+              aria-describedby={errors.servicio ? "contact-servicio-error" : undefined}
             >
               <option value="" disabled className="text-sand/40">
                 Selecciona una división técnica...
@@ -288,7 +288,7 @@ export function QuoteForm() {
             <ChevronDown className="pointer-events-none absolute right-3.5 top-3 h-4 w-4 text-sand/50" />
           </div>
           {errors.servicio && (
-            <p id="quote-servicio-error" className="mt-1 text-xs text-amber-300">
+            <p id="contact-servicio-error" className="mt-1 text-xs text-amber-300">
               {errors.servicio.message}
             </p>
           )}
@@ -297,23 +297,23 @@ export function QuoteForm() {
         {/* Mensaje / Requerimiento */}
         <div className="sm:col-span-2">
           <label
-            htmlFor="quote-mensaje"
+            htmlFor="contact-mensaje"
             className="block text-xs font-medium uppercase tracking-wider text-sand/80"
           >
             Detalle del Requerimiento / Equipo <span className="text-machine-yellow">*</span>
           </label>
           <textarea
-            id="quote-mensaje"
+            id="contact-mensaje"
             rows={3}
             disabled={isSubmitting}
             placeholder="Describe modelo de equipo, componente crítico, faena o requerimiento técnico..."
             {...register("mensaje")}
             className="mt-1.5 w-full rounded-md border border-mocha bg-espresso-deep/90 px-3.5 py-2.5 text-sm text-sand placeholder:text-sand/35 focus:border-machine-yellow focus:outline-none focus:ring-1 focus:ring-machine-yellow disabled:opacity-60"
             aria-invalid={!!errors.mensaje}
-            aria-describedby={errors.mensaje ? "quote-mensaje-error" : undefined}
+            aria-describedby={errors.mensaje ? "contact-mensaje-error" : undefined}
           />
           {errors.mensaje && (
-            <p id="quote-mensaje-error" className="mt-1 text-xs text-amber-300">
+            <p id="contact-mensaje-error" className="mt-1 text-xs text-amber-300">
               {errors.mensaje.message}
             </p>
           )}
@@ -339,7 +339,7 @@ export function QuoteForm() {
           ) : (
             <>
               <Send className="h-4 w-4" />
-              Enviar Cotización
+              Enviar Mensaje
             </>
           )}
         </button>

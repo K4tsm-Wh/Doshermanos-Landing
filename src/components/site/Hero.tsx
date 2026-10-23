@@ -37,7 +37,7 @@ export function Hero() {
             href="#contacto"
             className="inline-flex items-center gap-2 rounded-md bg-machine-yellow px-6 py-3 font-display text-base font-semibold uppercase tracking-wider text-espresso-deep shadow-industrial transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-machine-yellow"
           >
-            Solicitar Cotización
+            Contactar Ahora
             <ArrowRight className="h-5 w-5" />
           </a>
           <a

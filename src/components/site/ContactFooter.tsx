@@ -2,7 +2,7 @@ import { Mail, MapPin, ShieldCheck, Clock } from "lucide-react";
 import logoDosHermanos from "@/assets/Logos/LogoDosHermanos.png";
 import { CONTACT } from "./data";
 import { MapCard } from "./MapCard";
-import { QuoteForm } from "./QuoteForm";
+import { ContactForm } from "./ContactForm";
 
 export function ContactFooter() {
   return (
@@ -10,21 +10,21 @@ export function ContactFooter() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
         <div className="max-w-3xl">
           <span className="eyebrow text-xs text-machine-yellow">
-            Contacto Corporativo & Cotizaciones
+            Contacto Corporativo & Asistencia Técnica
           </span>
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-sand sm:text-5xl">
             Hablemos de tu próximo proyecto operacional
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-sand/80 sm:text-base">
             Estamos a disposición de empresas mandantes, faenas mineras e industrias para reuniones
-            técnicas, cotizaciones de maestranza y coordinación operativa en terreno.
+            técnicas, coordinación de maestranza y asistencia operativa en terreno.
           </p>
         </div>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-12">
-          {/* Columna Izquierda: Formulario de Cotización */}
+          {/* Columna Izquierda: Formulario de Contacto */}
           <div className="lg:col-span-7">
-            <QuoteForm />
+            <ContactForm />
           </div>
 
           {/* Columna Derecha: Canales Directos y Mapa */}

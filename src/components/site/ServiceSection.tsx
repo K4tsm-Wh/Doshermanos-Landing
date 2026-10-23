@@ -57,7 +57,7 @@ export function ServiceSection({ service, reversed }: { service: Service; revers
               hash="contacto"
               className="inline-flex items-center gap-2 rounded-md border border-steel-brown/30 bg-background/50 px-5 py-3 font-display text-sm font-semibold uppercase tracking-wider text-steel-brown transition-colors hover:border-orange-industrial hover:text-orange-industrial focus-visible:ring-2 focus-visible:ring-machine-yellow"
             >
-              Cotizar servicio
+              Consultar servicio
             </Link>
           </div>
         </div>
