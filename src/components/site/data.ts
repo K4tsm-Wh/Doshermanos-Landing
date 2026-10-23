@@ -5,6 +5,25 @@ import granallado from "@/assets/granallado.jpg";
 import fabricacion from "@/assets/fabricacion.jpg";
 import hero from "@/assets/hero.jpg";
 
+// Mecánica gallery assets
+import mecanicaOverhaul from "@/assets/gallery/mecanica/overhaul-transmision.jpg";
+import mecanicaCilindro from "@/assets/gallery/mecanica/reparacion-cilindro.jpg";
+import mecanicaTerreno from "@/assets/gallery/mecanica/diagnostico-terreno.jpg";
+import mecanicaMotor from "@/assets/gallery/mecanica/overhaul-motor-diesel.jpg";
+import mecanicaBomba from "@/assets/gallery/mecanica/banco-pruebas-hidraulico.jpg";
+import mecanicaEngranajes from "@/assets/gallery/mecanica/ajuste-mandos-finales.jpg";
+
+// Soldadura gallery assets
+import soldaduraMig from "@/assets/gallery/soldadura/soldadura-mig-vigas.jpg";
+import soldaduraTig from "@/assets/gallery/soldadura/soldadura-tig-canerias.jpg";
+import soldaduraBalde from "@/assets/gallery/soldadura/recuperacion-balde-minero.jpg";
+import soldaduraNdt from "@/assets/gallery/soldadura/ensayo-ultrasonido-ndt.jpg";
+
+// Mecanizado gallery assets
+import mecanizadoEje from "@/assets/gallery/mecanizado/torneado-cnc-eje.jpg";
+import mecanizadoFresado from "@/assets/gallery/mecanizado/fresado-cnc-5ejes.jpg";
+import mecanizadoCad from "@/assets/gallery/mecanizado/cnc-precision.jpg";
+
 export const CONTACT = {
   email: "gerencia@doshermanos.cl",
   address: "Barrio Industrial, Coquimbo, Chile",
@@ -31,7 +50,7 @@ export const NAV_LINKS: { to: ServicePath | "/"; label: string }[] = [
   { to: SERVICE_PATHS.fabricacion, label: "Fabricación y Mantención" },
 ];
 
-export type GalleryItem = { src: string; alt: string; ratio: "video" | "portrait" | "square" };
+export type GalleryItem = { src: string; alt: string; ratio?: "video" | "portrait" | "square" };
 
 export type Highlight = { title: string; items: string[] };
 
@@ -70,16 +89,12 @@ export const SERVICES: Service[] = [
     ],
     image: soldadura,
     gallery: [
-      { src: soldadura, alt: "Soldadura de estructura metálica en maestranza", ratio: "video" },
-      { src: hero, alt: "Trabajo de soldadura en maquinaria pesada", ratio: "portrait" },
-      { src: fabricacion, alt: "Componente soldado terminado", ratio: "square" },
-      { src: mecanica, alt: "Recuperación estructural de bastidor", ratio: "square" },
-      { src: mecanizado, alt: "Preparación de junta previa a soldadura", ratio: "video" },
-      {
-        src: granallado,
-        alt: "Estructura soldada lista para protección superficial",
-        ratio: "portrait",
-      },
+      { src: soldaduraMig, alt: "Soldadura MIG/MAG en vigas y estructuras pesadas" },
+      { src: soldaduraTig, alt: "Soldadura TIG de precisión en cañerías industriales" },
+      { src: soldaduraBalde, alt: "Recuperación y blindaje de balde para maquinaria pesada" },
+      { src: soldaduraNdt, alt: "Control de calidad con ensayo de ultrasonido NDT" },
+      { src: soldadura, alt: "Soldadura manual y arco sumergido en maestranza" },
+      { src: hero, alt: "Reparación estructural de maquinaria pesada en faena" },
     ],
     highlights: [
       {
@@ -120,26 +135,26 @@ export const SERVICES: Service[] = [
     id: "mecanica",
     path: SERVICE_PATHS.mecanica,
     index: "02",
-    category: "Sistemas & Potencia",
+    category: "Desarme reparación y armado de componentes estructurales",
     title: "Mecánica",
     description:
-      "Mantención y reparación integral de componentes mecánicos, transmisiones y sistemas hidráulicos pesados.",
+      "Mantención y reparación integral de componentes mecánicos.",
     overview:
       "Cubrimos el ciclo completo de mantención mecánica de maquinaria pesada: diagnóstico, desarme, medición de componentes, reemplazo bajo especificación de fabricante y pruebas funcionales. Nuestra capacidad en terreno permite intervenir equipos detenidos en faena y reducir el tiempo fuera de servicio con trazabilidad de cada componente instalado.",
     tags: ["Mecánica Pesada", "Diagnóstico & Overhaul", "Sistemas Hidráulicos"],
     specs: [
-      "Overhaul de transmisiones, mandos finales y motores",
-      "Reparación de cilindros, bombas y mangueras de alta presión",
-      "Diagnóstico en terreno con informe técnico y trazabilidad",
+      "Reparación de bastidores de tractores CAT, D8T, D9T, D10T, D11T",
+      "Reparación de chasis de tractores CAT, D8T, D9T, D10T, D11T",
+      "Reparación de mesa ripper de tractores CAT, D8T, D9T, D10T, D11T",
     ],
     image: mecanica,
     gallery: [
-      { src: mecanica, alt: "Intervención mecánica de maquinaria pesada", ratio: "video" },
-      { src: hero, alt: "Equipo pesado en mantención", ratio: "portrait" },
-      { src: mecanizado, alt: "Componente mecánico en proceso", ratio: "square" },
-      { src: fabricacion, alt: "Repuesto mecánico reconstruido", ratio: "square" },
-      { src: soldadura, alt: "Reparación de estructura de equipo", ratio: "video" },
-      { src: granallado, alt: "Componente preparado tras overhaul", ratio: "portrait" },
+      { src: mecanicaOverhaul, alt: "Overhaul integral y ajuste de transmisiones pesadas" },
+      { src: mecanicaCilindro, alt: "Reparación y prueba de presión en cilindros hidráulicos" },
+      { src: mecanicaTerreno, alt: "Diagnóstico en faena y torque calibrado en camión minero" },
+      { src: mecanicaMotor, alt: "Inspección micrométrica y overhaul de motor diésel" },
+      { src: mecanicaBomba, alt: "Banco de pruebas hidráulicas y calibración de válvulas" },
+      { src: mecanicaEngranajes, alt: "Calibración y ajuste de trenes de engranajes planetarios" },
     ],
     highlights: [
       {
@@ -183,23 +198,23 @@ export const SERVICES: Service[] = [
     category: "Precisión Industrial",
     title: "Mecanizado",
     description:
-      "Tornería, fresado y mecanizado CNC/convencional para tolerancias y ajustes de alta exigencia.",
+      "Tornería, fresado y mecanizado CNC/convencional para tolerancias y ajustes de fábrica para componentes CAT.",
     overview:
       "Fabricamos y rectificamos componentes con tolerancias exigentes mediante torno, fresa y mecanizado CNC, además de mecanizado in situ para alojamientos que no pueden desmontarse. Cada pieza se verifica dimensionalmente antes de la entrega, asegurando ajustes correctos en pines, bujes, ejes y bancadas de equipos mineros e industriales.",
     tags: ["Torno & Fresa", "Mecanizado In Situ", "Ajuste de Tolerancias"],
     specs: [
-      "Tornería y fresado CNC y convencional de gran formato",
-      "Mecanizado in situ para pines, bujes y alojamientos",
       "Metrología y verificación dimensional de cada pieza",
+      "Instalación de pasadores con frío contracción",
+      "Recuperación de alojamientos",
     ],
     image: mecanizado,
     gallery: [
-      { src: mecanizado, alt: "Torno industrial mecanizando una pieza", ratio: "video" },
-      { src: fabricacion, alt: "Pieza mecanizada terminada", ratio: "portrait" },
-      { src: hero, alt: "Maestranza de mecanizado", ratio: "square" },
-      { src: mecanica, alt: "Eje mecanizado para montaje", ratio: "square" },
-      { src: soldadura, alt: "Preparación de componente para mecanizado", ratio: "video" },
-      { src: granallado, alt: "Pieza mecanizada previo a recubrimiento", ratio: "portrait" },
+      { src: mecanizadoEje, alt: "Torneado CNC de eje de transmisión en maestranza" },
+      { src: mecanizadoFresado, alt: "Fresado CNC de precisión en centro de 5 ejes" },
+      { src: mecanizado, alt: "Mecanizado y desbaste de componente mecánico cilíndrico" },
+      { src: mecanizadoCad, alt: "Modelado CAD y programación CAM para mecanizado" },
+      { src: fabricacion, alt: "Repuestos y bujes mecanizados listos para montaje" },
+      { src: mecanicaEngranajes, alt: "Control dimensional y verificación de holguras" },
     ],
     highlights: [
       {
@@ -243,23 +258,23 @@ export const SERVICES: Service[] = [
     category: "Protección Superficial",
     title: "Granallado y Pintura",
     description:
-      "Preparación de superficies bajo estándares SSPC/NACE y esquemas de recubrimiento epóxico y anticorrosivo industrial.",
+      "Preparación y pintura de partes y piezas de componentes CAT.",
     overview:
       "Aplicamos esquemas de protección anticorrosiva completos: preparación de superficie por granallado según SSPC-SP6/SP10, imprimación y capas epóxicas o de poliuretano de alto espesor. Controlamos perfil de anclaje, espesor de película seca y adherencia, extendiendo la vida útil de estructuras y componentes expuestos a ambiente minero y costero.",
     tags: ["Granallado", "Pintura Industrial", "Recubrimientos Anticorrosivos"],
     specs: [
-      "Preparación de superficie SSPC-SP6 / SP10",
-      "Esquemas epóxicos y poliuretano de alto espesor",
-      "Control de espesor de película seca y adherencia",
+      "Limpieza de componentes CAT mediante granallado industrial",
+      "Preparación de recubrimiento anticorrosivo de alta adherencia garantizando la protección de la estructura contra la oxidación y agentes ambientales",
+      "Recubrimiento con pintura CAT de alta resistencia para protección contra la corrosión y desgaste",
     ],
     image: granallado,
     gallery: [
-      { src: granallado, alt: "Granallado de estructura industrial", ratio: "video" },
-      { src: hero, alt: "Equipo pesado con recubrimiento industrial", ratio: "portrait" },
-      { src: fabricacion, alt: "Pieza pintada terminada", ratio: "square" },
-      { src: soldadura, alt: "Estructura preparada para pintura", ratio: "square" },
-      { src: mecanica, alt: "Componente con esquema anticorrosivo", ratio: "video" },
-      { src: mecanizado, alt: "Pieza mecanizada previa a recubrimiento", ratio: "portrait" },
+      { src: granallado, alt: "Granallado abrasivo de estanque según norma SSPC-SP10" },
+      { src: soldaduraBalde, alt: "Componente pesado acondicionado para recubrimiento" },
+      { src: fabricacion, alt: "Lote de piezas industriales con protección anticorrosiva" },
+      { src: soldaduraMig, alt: "Preparación superficial de estructura metálica soldada" },
+      { src: mecanicaCilindro, alt: "Cilindro hidráulico con recubrimiento de alta resistencia" },
+      { src: hero, alt: "Protección superficial para maquinaria en faena minera" },
     ],
     highlights: [
       {
@@ -314,12 +329,12 @@ export const SERVICES: Service[] = [
     ],
     image: fabricacion,
     gallery: [
-      { src: fabricacion, alt: "Fabricación de piezas industriales a medida", ratio: "video" },
-      { src: mecanizado, alt: "Mecanizado de repuesto a medida", ratio: "portrait" },
-      { src: soldadura, alt: "Armado y soldadura de pieza fabricada", ratio: "square" },
-      { src: hero, alt: "Maestranza de fabricación", ratio: "square" },
-      { src: granallado, alt: "Pieza fabricada con protección superficial", ratio: "video" },
-      { src: mecanica, alt: "Montaje de componente fabricado", ratio: "portrait" },
+      { src: fabricacion, alt: "Fabricación de repuestos y componentes industriales a medida" },
+      { src: soldaduraBalde, alt: "Fabricación y blindaje de balde para maquinaria pesada" },
+      { src: soldaduraMig, alt: "Armado y ensamble de estructuras metálicas pesadas" },
+      { src: mecanizadoFresado, alt: "Mecanizado de precisión para ensamble de componentes" },
+      { src: mecanicaOverhaul, alt: "Conjunto mecánico fabricado bajo plano de ingeniería" },
+      { src: soldaduraNdt, alt: "Aseguramiento de calidad y trazabilidad de fabricación" },
     ],
     highlights: [
       {

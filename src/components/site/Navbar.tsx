@@ -44,14 +44,6 @@ export function Navbar() {
             height={40}
             className="h-10 w-auto shrink-0 object-contain drop-shadow"
           />
-          <span className="min-w-0 leading-none">
-            <span className="block truncate font-display text-xl font-bold uppercase tracking-wide text-sand">
-              Dos <span className="text-machine-yellow">Hermanos</span>
-            </span>
-            <span className="mt-1 block truncate text-[10px] uppercase tracking-[0.2em] text-sand/65">
-              Servicios Mineros e Industria
-            </span>
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-6 xl:flex" aria-label="Navegación principal">
