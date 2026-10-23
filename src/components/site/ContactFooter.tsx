@@ -1,7 +1,6 @@
-import { Mail, MapPin, ShieldCheck, Clock } from "lucide-react";
+import { Mail, Wrench, ShieldCheck, Check } from "lucide-react";
 import logoDosHermanos from "@/assets/Logos/LogoDosHermanos.png";
 import { CONTACT } from "./data";
-import { MapCard } from "./MapCard";
 import { ContactForm } from "./ContactForm";
 
 export function ContactFooter() {
@@ -27,8 +26,9 @@ export function ContactFooter() {
             <ContactForm />
           </div>
 
-          {/* Columna Derecha: Canales Directos y Mapa */}
-          <div className="space-y-6 lg:col-span-5">
+          {/* Columna Derecha: Canales Directos y Respaldo Operacional */}
+          <div className="flex flex-col justify-between gap-5 lg:col-span-5">
+            {/* Tarjeta de Contacto Directo */}
             <a
               href={`mailto:${CONTACT.email}`}
               className="group flex min-w-0 items-start gap-4 rounded-md border border-mocha bg-steel-brown/30 p-6 transition-all hover:border-machine-yellow hover:bg-steel-brown/40 focus-visible:ring-2 focus-visible:ring-machine-yellow"
@@ -41,33 +41,50 @@ export function ContactFooter() {
                 <span className="mt-1 block break-all font-display text-2xl font-bold text-sand group-hover:text-machine-yellow transition-colors">
                   {CONTACT.email}
                 </span>
-                <span className="mt-2 block text-xs text-sand/70">
-                  Atención directa para mandantes, licitaciones y órdenes de compra.
+                <span className="mt-2 block text-xs leading-relaxed text-sand/70">
+                  Atención directa para mandantes mineros, licitaciones y órdenes operacionales.
                 </span>
               </span>
             </a>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="flex min-w-0 items-start gap-3 rounded-md border border-mocha bg-steel-brown/20 p-4">
-                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-orange-industrial" />
-                <div className="min-w-0">
-                  <p className="text-xs uppercase tracking-widest text-sand/60">Ubicación</p>
-                  <p className="mt-1 text-xs leading-relaxed text-sand/90">{CONTACT.address}</p>
-                </div>
-              </div>
-
-              <div className="flex min-w-0 items-start gap-3 rounded-md border border-mocha bg-steel-brown/20 p-4">
-                <Clock className="mt-0.5 h-5 w-5 shrink-0 text-machine-yellow" />
-                <div className="min-w-0">
-                  <p className="text-xs uppercase tracking-widest text-sand/60">Respuesta Rápida</p>
-                  <p className="mt-1 text-xs leading-relaxed text-sand/90">
-                    Propuesta técnica &lt; 24 hrs
-                  </p>
-                </div>
+            {/* Tarjeta de Soporte Operacional */}
+            <div className="flex min-w-0 items-start gap-4 rounded-md border border-mocha bg-steel-brown/25 p-5">
+              <Wrench className="mt-1 h-5 w-5 shrink-0 text-orange-industrial" />
+              <div className="min-w-0">
+                <p className="text-xs uppercase tracking-widest text-sand/60">
+                  Operaciones en Faena & Maestranza
+                </p>
+                <p className="mt-1 text-sm font-semibold text-sand">
+                  Asistencia Técnica & Cuadrillas en Terreno
+                </p>
+                <p className="mt-1 text-xs leading-relaxed text-sand/75">
+                  Capacidad de desplazamiento y respuesta técnica para paradas de planta, montaje,
+                  mecanizado in situ y mantención de maquinaria pesada.
+                </p>
               </div>
             </div>
 
-            <MapCard />
+            {/* Tarjeta de Estándares y Trazabilidad */}
+            <div className="rounded-md border border-mocha bg-steel-brown/25 p-5">
+              <div className="flex items-center gap-2.5">
+                <ShieldCheck className="h-5 w-5 shrink-0 text-machine-yellow" />
+                <h4 className="font-display text-xs uppercase tracking-wider text-sand">
+                  Estándares & Trazabilidad Técnica
+                </h4>
+              </div>
+              <ul className="mt-3.5 space-y-2.5">
+                {[
+                  "Soldadores homologados y procedimientos calificados (WPS/PQR)",
+                  "Informes de control dimensional y ensayos no destructivos",
+                  "Coordinación ejecutiva directa con jefaturas y supervisión",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-xs text-sand/80">
+                    <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-machine-yellow" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
