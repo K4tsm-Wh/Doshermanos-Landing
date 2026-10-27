@@ -26,9 +26,9 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 const SERVICE_OPTIONS = [
   { value: "soldadura", label: "01 — Soldadura Estructural & Calderería" },
-  { value: "mecanica", label: "02 — Mecánica Pesada & Sistemas Hidráulicos" },
-  { value: "mecanizado", label: "03 — Tornería & Mecanizado CNC / In Situ" },
-  { value: "granallado", label: "04 — Granallado & Pintura Industrial Anticorrosiva" },
+  { value: "mecanica", label: "02 — Mecánica (Bastidores, Chasis y Mesa Ripper)" },
+  { value: "mecanizado", label: "03 — Tornería, Mecanizado & Torno de Barras" },
+  { value: "granallado", label: "04 — Granallado & Pintura Industrial (Componentes CAT)" },
   { value: "fabricacion", label: "05 — Fabricación & Mantención de Partes y Piezas" },
   { value: "terreno", label: "06 — Diagnóstico & Asistencia Técnica en Faena" },
 ];

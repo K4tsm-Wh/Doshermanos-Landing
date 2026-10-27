@@ -80,10 +80,10 @@ export const SERVICES: Service[] = [
     description:
       "Soldadura de alta resistencia, recuperación estructural y homologaciones técnicas.",
     overview:
-      "Ejecutamos soldadura estructural y de recuperación en aceros al carbono, inoxidables y aceros de alta resistencia, con procedimientos calificados (WPS/PQR) y soldadores homologados. Trabajamos tanto en maestranza como en faena, con equipos móviles, control dimensional y ensayos no destructivos que respaldan cada intervención sobre componentes críticos de maquinaria pesada.",
-    tags: ["MIG / TIG / Arco Sumergido", "Recuperación Estructural", "Control de Calidad"],
+      "Ejecutamos soldadura estructural y de recuperación en aceros al carbono, inoxidables y aceros de alta resistencia, bajo procedimientos calificados (WPS/PQR) y con soldadores homologados. Desarrollamos intervenciones tanto en maestranza como en terreno para componentes críticos de maquinaria pesada: recuperación de chasis, bastidores, tolvas y baldes, garantizando integridad estructural con inspección visual y ensayos no destructivos (NDT).",
+    tags: ["MIG / TIG / Arco Sumergido", "Recuperación Estructural", "Control de Calidad (NDT)"],
     specs: [
-      "Procedimientos calificados y soldadores homologados",
+      "Procedimientos calificados y soldadores homologados (WPS/PQR)",
       "Recuperación de chasis, bastidores y estructuras críticas",
       "Inspección visual y ensayos no destructivos según norma",
     ],
@@ -98,54 +98,54 @@ export const SERVICES: Service[] = [
     ],
     highlights: [
       {
-        title: "Aplicaciones",
+        title: "Aplicaciones Críticas",
         items: [
-          "Chasis y bastidores",
-          "Tolvas y baldes",
-          "Estructuras y calderería",
-          "Reparación de fisuras",
+          "Chasis y bastidores de maquinaria",
+          "Tolvas y baldes de cargadores y palas",
+          "Estructuras pesadas y calderería industrial",
+          "Recuperación y refuerzo de fisuras estructurales",
         ],
       },
       {
-        title: "Equipamiento",
+        title: "Equipamiento & Métodos",
         items: [
-          "Equipos MIG/MAG y TIG",
-          "Arco sumergido",
-          "Plantas móviles en faena",
-          "Precalentamiento controlado",
+          "Procesos MIG/MAG, TIG y arco sumergido",
+          "Plantas móviles autónomas para trabajo en faena",
+          "Control estricto de precalentamiento e interpase",
+          "Equipos de corte térmico y biselado",
         ],
       },
       {
-        title: "Aseguramiento de calidad",
+        title: "Aseguramiento de Calidad",
         items: [
-          "WPS / PQR vigentes",
-          "Inspección visual certificada",
-          "Ensayos no destructivos",
-          "Informe técnico por trabajo",
+          "Procedimientos WPS y registros PQR vigentes",
+          "Inspección visual (VT) certificada",
+          "Ensayos no destructivos (tintas penetrantes y ultrasonido)",
+          "Dossier técnico e informe final por servicio",
         ],
       },
     ],
     meta: {
       title: "Soldadura Industrial y Estructural | Dos Hermanos",
       description:
-        "Soldadura MIG, TIG y arco sumergido con procedimientos calificados, recuperación estructural y ensayos no destructivos para maquinaria pesada.",
+        "Soldadura MIG, TIG y arco sumergido bajo normas WPS/PQR, recuperación de chasis, bastidores y ensayos no destructivos para maquinaria pesada.",
     },
   },
   {
     id: "mecanica",
     path: SERVICE_PATHS.mecanica,
     index: "02",
-    category: "Desarme reparación y armado de componentes estructurales",
+    category: "Desarme, reparación y armado de componentes estructurales",
     title: "Mecánica",
     description:
       "Mantención y reparación integral de componentes mecánicos.",
     overview:
-      "Cubrimos el ciclo completo de mantención mecánica de maquinaria pesada: diagnóstico, desarme, medición de componentes, reemplazo bajo especificación de fabricante y pruebas funcionales. Nuestra capacidad en terreno permite intervenir equipos detenidos en faena y reducir el tiempo fuera de servicio con trazabilidad de cada componente instalado.",
-    tags: ["Mecánica Pesada", "Diagnóstico & Overhaul", "Sistemas Hidráulicos"],
+      "Especialistas en el desarme, reparación y armado de componentes estructurales pesados en maquinaria minera. Concentramos nuestra experiencia en la intervención y reconstrucción integral de bastidores, chasis y mesa ripper en tractores CAT (series D8T, D9T, D10T y D11T), aplicando rigurosos protocolos técnicos de torque, tolerancias de fábrica y alineamiento para asegurar la máxima confiabilidad operativa en terreno.",
+    tags: ["Mecánica Pesada", "Tractores CAT (D8T - D11T)", "Bastidores & Chasis"],
     specs: [
-      "Reparación de bastidores de tractores CAT, D8T, D9T, D10T, D11T",
-      "Reparación de chasis de tractores CAT, D8T, D9T, D10T, D11T",
-      "Reparación de mesa ripper de tractores CAT, D8T, D9T, D10T, D11T",
+      "Reparación de bastidores de tractores CAT: D8T, D9T, D10T y D11T",
+      "Reparación de chasis de tractores CAT: D8T, D9T, D10T y D11T",
+      "Reparación de mesa ripper de tractores CAT: D8T, D9T, D10T y D11T",
     ],
     image: mecanica,
     gallery: [
@@ -158,37 +158,37 @@ export const SERVICES: Service[] = [
     ],
     highlights: [
       {
-        title: "Aplicaciones",
+        title: "Componentes Principales",
         items: [
-          "Transmisiones y mandos finales",
-          "Motores diésel",
-          "Cilindros hidráulicos",
-          "Sistemas de frenos",
+          "Bastidores de tractores CAT (D8T a D11T)",
+          "Chasis estructurales y vigas maestras",
+          "Mesa ripper y brazos de tiro",
+          "Puntos de articulación y anclajes mayores",
         ],
       },
       {
-        title: "Equipamiento",
+        title: "Metodología de Intervención",
         items: [
-          "Bancos de prueba hidráulica",
-          "Herramienta de torque calibrada",
-          "Camiones de servicio",
-          "Instrumentos de diagnóstico",
+          "Desarme técnico y levantamiento de daños",
+          "Evaluación dimensional de deformaciones",
+          "Corrección estructural y refuerzo",
+          "Armado bajo especificaciones técnicas del fabricante",
         ],
       },
       {
-        title: "Aseguramiento de calidad",
+        title: "Aseguramiento de Calidad",
         items: [
-          "Medición de holguras",
-          "Torques según fabricante",
-          "Pruebas funcionales",
-          "Registro de repuestos",
+          "Control de apriete con torque calibrado",
+          "Verificación de tolerancias y holguras de fábrica",
+          "Inspección de pernería y elementos de sujeción",
+          "Informe técnico de reparación y protocolo de entrega",
         ],
       },
     ],
     meta: {
-      title: "Mecánica Pesada y Sistemas Hidráulicos | Dos Hermanos",
+      title: "Mecánica y Componentes Estructurales CAT | Dos Hermanos",
       description:
-        "Overhaul de transmisiones, motores y mandos finales, reparación hidráulica y diagnóstico en terreno con informe técnico y trazabilidad.",
+        "Desarme, reparación y armado de bastidores, chasis y mesa ripper en tractores CAT D8T, D9T, D10T y D11T con tolerancias de fábrica.",
     },
   },
   {
@@ -200,12 +200,12 @@ export const SERVICES: Service[] = [
     description:
       "Tornería, fresado y torno de barras (barrenado de alojamientos) para tolerancias y ajustes de fábrica para componentes.",
     overview:
-      "Fabricamos y rectificamos componentes con tolerancias exigentes mediante torno, fresa y mecanizado CNC, además de mecanizado in situ para alojamientos que no pueden desmontarse. Cada pieza se verifica dimensionalmente antes de la entrega, asegurando ajustes correctos en pines, bujes, ejes y bancadas de equipos mineros e industriales.",
-    tags: ["Torno & Fresa", "Mecanizado In Situ", "Ajuste de Tolerancias"],
+      "Servicio de mecanizado y tornería de alta precisión ejecutado tanto en taller de maestranza como in situ en faena. Realizamos tornería convencional y CNC, fresado y barrenado de alojamientos mediante torno de barras portátil, recuperando alojamientos sin necesidad de desmontar ensambles mayores. Integramos procesos especializados como la instalación de pasadores por frío-contracción y metrología dimensional rigurosa para restablecer tolerancias y ajustes de fábrica.",
+    tags: ["Torno de Barras", "Mecanizado In Situ", "Metrología Dimensional"],
     specs: [
       "Metrología y verificación dimensional de cada pieza",
-      "Instalación de pasadores con frío contracción",
-      "Recuperación de alojamientos",
+      "Instalación de pasadores por frío-contracción",
+      "Recuperación y barrenado de alojamientos con torno de barras",
     ],
     image: mecanizado,
     gallery: [
@@ -218,37 +218,37 @@ export const SERVICES: Service[] = [
     ],
     highlights: [
       {
-        title: "Aplicaciones",
+        title: "Procesos de Mecanizado",
         items: [
-          "Pines y bujes",
-          "Ejes y camisas",
-          "Alojamientos y bancadas",
-          "Rectificado de superficies",
+          "Barrenado de alojamientos con torno de barras portátil",
+          "Tornería cilíndrica, cónica y roscado de precisión",
+          "Fresado universal y mecanizado CNC",
+          "Instalación criogénica por frío-contracción",
         ],
       },
       {
-        title: "Equipamiento",
+        title: "Componentes Mecanizados",
         items: [
-          "Torno CNC y convencional",
-          "Fresadora universal",
-          "Mandrinadora portátil",
-          "Instrumentos de metrología",
+          "Alojamientos de articulaciones y bancadas",
+          "Pasadores, pines y bujes de alto desgaste",
+          "Ejes de transmisión y camisas de desgaste",
+          "Rectificado de caras y superficies de apoyo",
         ],
       },
       {
-        title: "Aseguramiento de calidad",
+        title: "Control Metrológico",
         items: [
-          "Verificación dimensional",
-          "Control de rugosidad",
-          "Planos de fabricación",
-          "Protocolo de entrega",
+          "Medición micrométrica con instrumentos calibrados",
+          "Verificación de rugosidad y acabado superficial",
+          "Ajustes según normas ISO y tolerancias del fabricante",
+          "Pauta de control dimensional certificada",
         ],
       },
     ],
     meta: {
-      title: "Mecanizado CNC y Tornería Industrial | Dos Hermanos",
+      title: "Mecanizado, Tornería y Torno de Barras | Dos Hermanos",
       description:
-        "Tornería, fresado CNC y mecanizado in situ de pines, bujes y alojamientos con metrología y verificación dimensional certificada.",
+        "Tornería, fresado y barrenado de alojamientos con torno de barras portátil, metrología de precisión e instalación por frío-contracción.",
     },
   },
   {
@@ -260,13 +260,13 @@ export const SERVICES: Service[] = [
     description:
       "Preparación y pintura de partes y piezas de componentes.",
     overview:
-      "Aplicamos esquemas de protección anticorrosiva completos: preparación de superficie por granallado según SSPC-SP6/SP10, imprimación y capas epóxicas o de poliuretano de alto espesor. Controlamos perfil de anclaje, espesor de película seca y adherencia, extendiendo la vida útil de estructuras y componentes expuestos a ambiente minero y costero.",
-    tags: ["Granallado", "Pintura Industrial", "Recubrimientos Anticorrosivos"],
+      "Tratamiento y protección superficial de alto rendimiento para partes, piezas y componentes de maquinaria pesada. Ejecutamos limpieza profunda mediante granallado abrasivo industrial bajo estándares normados SSPC (especialistas en componentes CAT), garantizando la completa remoción de óxidos y un perfil de anclaje óptimo. Aplicamos esquemas anticorrosivos de alta adherencia y pintura CAT de alta resistencia contra corrosión y desgaste, además de esquemas de pintura corporativa según la identidad del cliente.",
+    tags: ["Granallado Industrial", "Pintura CAT", "Pintura Corporativa"],
     specs: [
-      "Limpieza de componentes CAT mediante granallado industrial",
-      "Preparación de recubrimiento anticorrosivo de alta adherencia garantizando la protección de la estructura contra la oxidación y agentes ambientales",
-      "Recubrimiento con pintura CAT de alta resistencia para protección contra la corrosión y desgaste",
-      "Pinturas corporativa de componentes",
+      "Limpieza de componentes mediante granallado industrial",
+      "Preparación de recubrimiento anticorrosivo de alta adherencia para protección contra oxidación y agentes ambientales",
+      "Recubrimiento con pintura de alta resistencia para protección contra la corrosión y el desgaste",
+      "Pintura corporativa de componentes según estándar de cliente",
     ],
     image: granallado,
     gallery: [
@@ -279,37 +279,37 @@ export const SERVICES: Service[] = [
     ],
     highlights: [
       {
-        title: "Aplicaciones",
+        title: "Preparación de Superficies",
         items: [
-          "Estructuras y estanques",
-          "Chasis y tolvas",
-          "Piezas y componentes",
-          "Repintado de flota",
+          "Granallado abrasivo bajo norma SSPC-SP6 / SP10",
+          "Limpieza profunda de componentes CAT",
+          "Perfil de anclaje controlado para máxima adherencia",
+          "Desengrase y eliminación total de contaminantes",
         ],
       },
       {
-        title: "Equipamiento",
+        title: "Esquemas de Pintura",
         items: [
-          "Cabina de granallado",
-          "Equipos airless",
-          "Compresores industriales",
-          "Control de humedad y temperatura",
+          "Imprimantes anticorrosivos de alta adherencia",
+          "Pintura de alta resistencia contra abrasión e intemperie",
+          "Sistemas epóxicos y poliuretanos industriales",
+          "Pinturas corporativas personalizadas por flota",
         ],
       },
       {
-        title: "Aseguramiento de calidad",
+        title: "Control de Calidad",
         items: [
-          "Perfil de anclaje medido",
-          "Espesor de película seca",
-          "Pruebas de adherencia",
-          "Registro fotográfico",
+          "Medición de espesor de película seca (mils / micras)",
+          "Comprobación de adherencia según norma técnica",
+          "Control de humedad y temperatura durante aplicación",
+          "Inspección visual y registro fotográfico final",
         ],
       },
     ],
     meta: {
-      title: "Granallado y Pintura Industrial Anticorrosiva | Dos Hermanos",
+      title: "Granallado y Pintura Industrial de Componentes | Dos Hermanos",
       description:
-        "Preparación de superficie SSPC-SP6/SP10, esquemas epóxicos y poliuretano de alto espesor con control de espesor y adherencia.",
+        "Limpieza por granallado abrasivo SSPC, esquemas anticorrosivos de alta adherencia, pintura de alta resistencia y pintura corporativa.",
     },
   },
   {
@@ -321,8 +321,8 @@ export const SERVICES: Service[] = [
     description:
       "Reconstrucción, diseño y fabricación a medida de repuestos y piezas críticas para continuidad operacional.",
     overview:
-      "Desarrollamos repuestos y componentes a medida a partir de levantamiento dimensional, ingeniería inversa y planos de fabricación, incluyendo piezas descontinuadas o sin stock disponible. Complementamos con planes de mantención preventiva definidos por equipo y criticidad, orientados a sostener la continuidad operacional de faenas e industria.",
-    tags: ["Fabricación a Medida", "Reingeniería de Componentes", "Mantención Preventiva"],
+      "Diseño, reconstrucción y fabricación a medida de repuestos y piezas críticas a partir de levantamiento dimensional en terreno, planos técnicos o ingeniería inversa. Brindamos respuesta ágil ante piezas descontinuadas o sin stock comercial inmediato, minimizando tiempos de detención en faena. Complementamos con planes de mantención preventiva estructurados por equipo y nivel de criticidad operacional.",
+    tags: ["Fabricación a Medida", "Ingeniería Inversa", "Mantención Preventiva"],
     specs: [
       "Levantamiento dimensional y planos de fabricación",
       "Reconstrucción de piezas descontinuadas o sin stock",
@@ -339,37 +339,37 @@ export const SERVICES: Service[] = [
     ],
     highlights: [
       {
-        title: "Aplicaciones",
+        title: "Líneas de Fabricación",
         items: [
-          "Repuestos descontinuados",
-          "Piezas de desgaste",
-          "Componentes estructurales",
-          "Kits de mantención",
+          "Fabricación a medida bajo plano o muestra",
+          "Reconstrucción de componentes descontinuados",
+          "Piezas de desgaste y refuerzos estructurales",
+          "Kits de repuestos para mantenciones mayores",
         ],
       },
       {
-        title: "Equipamiento",
+        title: "Capacidades de Maestranza",
         items: [
-          "Levantamiento dimensional",
-          "Corte y plegado",
-          "Mecanizado y soldadura",
-          "Ensamble en maestranza",
+          "Levantamiento dimensional técnico en terreno",
+          "Corte, conformado y mecanizado de precisión",
+          "Soldadura estructural calificada",
+          "Ensamble y ajuste en taller de maestranza",
         ],
       },
       {
-        title: "Aseguramiento de calidad",
+        title: "Aseguramiento de Calidad",
         items: [
-          "Planos aprobados",
-          "Control de materiales",
-          "Verificación de ajuste",
-          "Garantía de fabricación",
+          "Certificación de calidad en aceros y aleaciones",
+          "Verificación dimensional exhaustiva",
+          "Pruebas de calce y acople previo al despacho",
+          "Garantía técnica de fabricación",
         ],
       },
     ],
     meta: {
       title: "Fabricación y Mantención de Partes y Piezas | Dos Hermanos",
       description:
-        "Diseño, reingeniería y fabricación a medida de repuestos críticos, más planes de mantención preventiva por equipo y criticidad.",
+        "Levantamiento dimensional, fabricación a medida de repuestos críticos y descontinuados, y planes de mantención preventiva por criticidad.",
     },
   },
 ];
