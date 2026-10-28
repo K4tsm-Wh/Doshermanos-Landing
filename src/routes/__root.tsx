@@ -121,7 +121,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png?v=2", type: "image/png" },
+      { rel: "icon", href: "/favicon-32x32.png?v=2", type: "image/png", sizes: "32x32" },
+      { rel: "icon", href: "/favicon.ico?v=2", type: "image/x-icon", sizes: "any" },
+      { rel: "shortcut icon", href: "/favicon.png?v=2" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=2" },
     ],
   }),
 
@@ -135,6 +139,8 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
       <head>
+        <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+        <link rel="shortcut icon" href="/favicon.png?v=2" />
         <HeadContent />
       </head>
       <body className="antialiased">
@@ -153,6 +159,24 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    // Forzar actualización inmediata del favicon en la pestaña para anular la caché persistente del navegador
+    const timestamp = Date.now();
+    const existingIcons = document.querySelectorAll<HTMLLinkElement>("link[rel*='icon']");
+    if (existingIcons.length > 0) {
+      existingIcons.forEach((el) => {
+        const baseHref = el.href.split("?")[0];
+        el.href = `${baseHref}?v=${timestamp}`;
+      });
+    } else {
+      const link = document.createElement("link");
+      link.rel = "icon";
+      link.type = "image/png";
+      link.href = `/favicon.png?v=${timestamp}`;
+      document.head.appendChild(link);
+    }
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
